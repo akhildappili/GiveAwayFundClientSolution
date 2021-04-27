@@ -1,0 +1,75 @@
+﻿@model IEnumerable<GiveAwayFundClientProject.Models.ViewModels.Donor>
+
+@{
+    ViewData["Title"] = "DonorsDetails";
+}
+
+<body>
+    <div>
+        @{Html.RenderPartial("~/Views/Shared/_Admin.cshtml"); }
+    </div>
+    <table class="table" style="text-align:center">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorPhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorMailId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorUserName)
+                </th>
+                @*<th>
+                     @Html.DisplayNameFor(model => model.DonorPassword)
+                    </th>
+                    <th>
+                     @Html.DisplayNameFor(model => model.DonorConfirmPassword)
+                    </th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorMailId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorUserName)
+                    </td>
+                    @* <td>
+                            @Html.DisplayFor(modelItem => item.DonorPassword)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DonorConfirmPassword)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

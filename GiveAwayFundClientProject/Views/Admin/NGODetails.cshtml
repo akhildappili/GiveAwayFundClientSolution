@@ -1,0 +1,87 @@
+﻿@model IEnumerable<GiveAwayFundClientProject.Models.ViewModels.NGO>
+
+@{
+    ViewData["Title"] = "NGODetails";
+}
+
+<body>
+    <div>
+        @{Html.RenderPartial("~/Views/Shared/_Admin.cshtml"); }
+    </div>
+    <div>
+        @*<h1>NGO Details</h1>*@
+        <table class="table" style="text-align:center" >
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgoId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgoName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgoPhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgoMailId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgoAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgoUserName)
+                    </th>
+                    @*<th>
+            @Html.DisplayNameFor(model => model.NgoPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgoConfirmPassword)
+        </th>*@
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoPhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoMailId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoUserName)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.NgoPassword)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgoConfirmPassword)
+                        </td>*@
+                        <td>
+                            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                            @Html.ActionLink("Delete", "DeleteNgo", new { id = item.NgoId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+
+</body>

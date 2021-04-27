@@ -1,0 +1,40 @@
+﻿@model GiveAwayFundClientProject.Models.ViewModels.EventRaiserwithoutid
+
+@{
+    ViewData["Title"] = "RaiseFunds";
+}
+
+<h1>RaiseFunds</h1>
+
+<h4>EventRaiserwithoutid</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="RaiseFunds">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NgoId" class="control-label"></label>
+                <input asp-for="NgoId" class="form-control" />
+                <span asp-validation-for="NgoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FundDescription" class="control-label"></label>
+                <input asp-for="FundDescription" class="form-control" />
+                <span asp-validation-for="FundDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FundPrice" class="control-label"></label>
+                <input asp-for="FundPrice" class="form-control" />
+                <span asp-validation-for="FundPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

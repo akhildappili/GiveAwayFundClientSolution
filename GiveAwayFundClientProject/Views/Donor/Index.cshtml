@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GiveAwayFundClientProject</a>*@
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Donor" asp-action="Donate">Add Donation</a>
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Donation List", "DonationLists", "Donor", new { id = Convert.ToInt32(TempData.Peek("donarid")) }, new { @class = "btn btn-info " })
+                        @*<a class="nav-link text-dark" asp-area="" asp-controller="Donor" asp-action="DonationLists" ></a>*@
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Edit details", "GetDetails", "Donor", new { id = Convert.ToInt32(TempData.Peek("donarid")) }, new { @class = "btn btn-info " })
+                        @*<a class="nav-link text-dark" asp-area="" asp-controller="Donor" asp-action="DonationLists" ></a>*@
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Donor Amount Details", "GetTotalAmount", "Donor", new { id = Convert.ToInt32(TempData.Peek("donarid")) }, new { @class = "btn btn-info " })
+                        @*<a class="nav-link text-dark" asp-area="" asp-controller="Donor" asp-action="DonationLists" ></a>*@
+                    </li>
+
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<h1>Index</h1>
+<div>
+    Welcome to Donor page
+</div>
+
+<p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Donor Amount Details </a>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Facts</button>
+    @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>*@
+</p>
+<div class="row">
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+
+                @Html.ActionLink("Donor Amount Details", "GetTotalAmount", "Donor", new { id = Convert.ToInt32(TempData.Peek("donarid")) })
+                @*<a class="nav-link text-dark" asp-area="" asp-controller="Donor" asp-action="DonationLists" ></a>*@
+
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+                To ensure our beneficiary children continue to receive nutritious meals amid the prevailing crisis;
+                To boost immunity and health of children;
+                To ensure basic hygiene needs are met; and
+                Engage children in activities to support their continuous learning amid the lockdown.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4">
+        <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhcml0eXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Child Education</h5>
+                <p class="card-text"> The goal of children education is to develops skills, the spirit of competition and enhances personality development.</p>
+            </div>
+            @*<a href="#!" class="btn btn-primary">Button</a>*@
+            <a class="btn btn-primary" asp-area="" asp-controller="Donor" asp-action="Donate">Add Donation</a>
+        </div>
+
+    </div>
+    <div class="col mb-4">
+        <div class="card h-100">
+            <img src="https://miro.medium.com/max/2625/0*lzyNu8ztv9-aJSyn.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Child Food</h5>
+                <p class="card-text">One in three of the world's malnourished children lives in India. Our children are going to school hungry. They suffer from lack of concentration and reduced cognitive development, directly leading to their dropping out of school.</p>
+            </div>
+            <a class="btn btn-primary" asp-area="" asp-controller="Donor" asp-action="DonateChildFood">Add Donation</a>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <div class="card h-100">
+            <img src="https://www.careinternational.org.uk/sites/default/files/Philippines_education_girls-in-classroom_860px.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Women Education</h5>
+                <p class="card-text">Education saves and improves the lives of girls and women, ultimately leading to more equitable development, stronger families, better services, better child health.</p>
+            </div>
+            <a class="btn btn-primary" asp-area="" asp-controller="Donor" asp-action="DonateWomenEdu">Add Donation</a>
+        </div>
+    </div>
+    @*<div class="col mb-4">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>*@
+</div>
+<!------ Include the above in your HEAD tag ---------->
+
+@{Html.RenderPartial("~/Views/Shared/_DonorDetailsMax.cshtml");}
+
+<section id="counter" class="sec-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="count">
+                    <span class="fa fa-smile-o"></span>
+                    <p class="number">12</p>
+                    <h4>Events</h4>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="count">
+                    <span class="fa fa-smile-o"></span>
+                    <p class="number">5</p>
+                    <h4>Donors</h4>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="count">
+                    <span class="fa fa-smile-o"></span>
+                    <p class="number">89</p>
+                    <h4>Helping Hands</h4>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="count">
+                    <span class="fa fa-smile-o"></span>
+                    <p class="number">7</p>
+                    <h4>Projects Complete</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

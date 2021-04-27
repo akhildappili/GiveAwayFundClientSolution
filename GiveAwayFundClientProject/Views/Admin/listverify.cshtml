@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GiveAwayFundClientProject.Models.ViewModels.Verification>
+
+@{
+    ViewData["Title"] = "listverify";
+}
+
+<h1>listverify</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VerificationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProofOfVerification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerificationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProofOfVerification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("verify", "VerifyNgo", new { id=item.VerificationId }) 
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

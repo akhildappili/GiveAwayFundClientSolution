@@ -1,0 +1,30 @@
+﻿<link href="~/css/donorMaxDetails.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-1">
+                <h3>Highest  Amount Donated by Donor </h3>
+                <p  style="text-align:center;font-size:30px;" class="donorname">
+                    @TempData.Peek("donarnamemax")
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-2">
+                <h3>Total Amount donated</h3>
+                <p style="color:crimson;font-size:30px;text-align:center;">   @TempData.Peek("totalamount") Rs/-
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-3">
+                <h3>Need For Service</h3>
+                <p>
+                   Enabling a giving culture..Join hands for the great cause
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

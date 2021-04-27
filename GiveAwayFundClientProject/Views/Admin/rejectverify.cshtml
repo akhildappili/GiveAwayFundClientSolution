@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GiveAwayFundClientProject.Models.ViewModels.Verification>
+
+@{
+    ViewData["Title"] = "rejectverify";
+}
+
+<h1>rejectverify</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VerificationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProofOfVerification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerificationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProofOfVerification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Verify", "VerifyNgo", new { id = item.VerificationId }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

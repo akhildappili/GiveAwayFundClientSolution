@@ -1,0 +1,60 @@
+﻿@model GiveAwayFundClientProject.Models.ViewModels.Donor
+
+@{
+    ViewData["Title"] = "GetDetails";
+}
+
+<h1>GetDetails</h1>
+
+<h4>Donor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetDetails">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DonorId" class="control-label"></label>
+                <input asp-for="DonorId" class="form-control" readonly />
+                <span asp-validation-for="DonorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorName" class="control-label"></label>
+                <input asp-for="DonorName" class="form-control" />
+                <span asp-validation-for="DonorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorPhoneNumber" class="control-label"></label>
+                <input asp-for="DonorPhoneNumber" class="form-control" />
+                <span asp-validation-for="DonorPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorMailId" class="control-label"></label>
+                <input asp-for="DonorMailId" class="form-control" />
+                <span asp-validation-for="DonorMailId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorUserName" class="control-label"></label>
+                <input asp-for="DonorUserName" class="form-control" />
+                <span asp-validation-for="DonorUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorPassword" class="control-label"></label>
+                <input asp-for="DonorPassword" class="form-control" />
+                <span asp-validation-for="DonorPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorConfirmPassword" class="control-label"></label>
+                <input asp-for="DonorConfirmPassword" class="form-control" />
+                <span asp-validation-for="DonorConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

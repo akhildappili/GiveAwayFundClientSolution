@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GiveAwayFundClientProject.Models.ViewModels.EventRaiser>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h1>Events</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FundId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FundDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FundPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FundId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FundDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FundPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

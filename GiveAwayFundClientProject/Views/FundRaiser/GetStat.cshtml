@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+  $(document).ready(function(){
+   var progressBarVal=@TempData.Peek("percentProgress");
+   var html="<div class='progress-bar progress-bar-striped active' role='progressbar' aria-valuenow="+progressBarVal+" aria-valuemin='0' aria-valuemax='100' style='width:"+progressBarVal+"%'>"+progressBarVal+"%</div>";
+   $(".progress").append(html);
+  });
+    </script>
+
+    <link href="~/css/FundDetails.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--<div class="container">
+        <h2>remaing fund amount : @TempData.Peek("amountRemaining")</h2>
+        <h2>The below progress shows amount to be received  </h2>
+        <div class="progress">
+
+        </div>-->
+    @*<h2>total value generated : 2000</h2>*@
+    <!--<h2>Status of fund deposit: <b style="color:orange"> @TempData.Peek("fundStatus")</b></h2>
+    </div>-->
+
+    @*<div class="card text-white bg-secondary mb-3  " style="max-width: 1800rem">
+        <div class="card-header">Fund Details</div>
+        <div class="card-body">
+            <h5 class="card-title">remaing fund amount : @TempData.Peek("amountRemaining")</h5>
+            <p class="card-text">Status of fund deposit: <b style="color:orange"> @TempData.Peek("fundStatus")</b></p>
+            <div class="progress">
+
+            </div>
+        </div>
+    </div>*@
+
+    <div class="container center">
+        <div class="card">
+            <h2>Card</h2>
+            <div class="card-body">
+                <h1 class="card-title">Remaing fund amount : @TempData.Peek("amountRemaining")</h1>
+                <h2 class="card-text">Status of fund deposit: <b style="color:orange"> @TempData.Peek("fundStatus")</b></h2>
+                <div class="progress">
+
+                </div>
+                <h3 style="color:gold">Collected @TempData.Peek("percentProgress")% out of 100%</h3>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

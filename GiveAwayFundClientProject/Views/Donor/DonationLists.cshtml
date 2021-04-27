@@ -1,0 +1,60 @@
+﻿@model IEnumerable<GiveAwayFundClientProject.Models.ViewModels.Donation>
+
+@{
+    ViewData["Title"] = "DonationLists";
+}
+
+<h1>DonationLists</h1>
+@{Html.RenderPartial("~/Views/Shared/_DonorNavbar.cshtml");}
+<p>
+    <a asp-controller="Donor" asp-action="Index">Go Back</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransactionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>

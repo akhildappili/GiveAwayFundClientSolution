@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>
+
+<h3>Welcome ADMIN</h3>
+
+@Html.ActionLink("FundRaisers List", "NGODetails", new { /* id=item.PrimaryKey */ }) |
+@Html.ActionLink("Donors List", "DonorsDetails", new { /* id=item.PrimaryKey */ }) |
+@Html.ActionLink("Verify FundRaiser", "listverify", new { /* id=item.PrimaryKey */ })*@ 
+<head>
+    <link href="~/css/Admin.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="viewport">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <header>
+                <a href="#">Welcome Admin</a>
+            </header>
+            <ul class="nav">
+                <li>
+                    @Html.ActionLink("Home", "Index", new { /* id=item.PrimaryKey */ })<br /><br />
+
+                </li>
+                <li>
+                    @Html.ActionLink("FundRaisers List", "NGODetails", new { /* id=item.PrimaryKey */ })<br /><br />
+                    @*<i class="zmdi zmdi-view-dashboard"></i> Dashboard*@
+
+                </li>
+                <li>
+                    @Html.ActionLink("Donors List", "DonorsDetails", new { /* id=item.PrimaryKey */ })<br /><br />
+
+                </li>
+                <li>
+                    @Html.ActionLink("Verify FundRaiser", "listverify", new { /* id=item.PrimaryKey */ })<br /><br />
+                </li>
+                <li>
+                    @Html.ActionLink("Accepted FundRaiser", "acceptverify", new { /* id=item.PrimaryKey */ })<br /><br />
+                </li>
+                <li>
+                    @Html.ActionLink("Rejected FundRaiser", "rejectverify", new { /* id=item.PrimaryKey */ })<br /><br />
+                </li>
+                @*<li>
+            <a href="#">
+                <i class="zmdi zmdi-calendar"></i> Events
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="zmdi zmdi-info-outline"></i> About
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="zmdi zmdi-settings"></i> Services
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="zmdi zmdi-comment-more"></i> Contact
+            </a>
+        </li>*@
+            </ul>
+        </div>
+        <div>
+            <img src ="~/Images/Give-Clothes-to-Charity-London-1920x700.jpg" width="1000" height="600"/>
+        </div>
+    </div>
+</body>

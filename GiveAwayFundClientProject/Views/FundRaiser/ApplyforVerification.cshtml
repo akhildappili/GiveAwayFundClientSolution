@@ -1,0 +1,45 @@
+﻿@model GiveAwayFundClientProject.Models.ViewModels.Verification
+
+@{
+    ViewData["Title"] = "ApplyforVerification";
+}
+
+<h1>ApplyforVerification</h1>
+
+<h4>Verification</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ApplyforVerification">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="VerificationId" class="control-label"></label>
+                <input asp-for="VerificationId" class="form-control" />
+                <span asp-validation-for="VerificationId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="NgoId" class="control-label"></label>
+                <input asp-for="NgoId" class="form-control" />
+                <span asp-validation-for="NgoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProofOfVerification" class="control-label"></label>
+                <input asp-for="ProofOfVerification" class="form-control" />
+                <span asp-validation-for="ProofOfVerification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" readonly="readonly" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

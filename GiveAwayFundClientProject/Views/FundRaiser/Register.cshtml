@@ -1,0 +1,75 @@
+﻿@model GiveAwayFundClientProject.Models.ViewModels.NGO
+
+@{
+    ViewData["Title"] = "Register";
+}
+<head>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form asp-action="Register" class="box">
+                        <h1>Register</h1>
+                        <p class="text-muted"> Please Register here as FundRaiser!</p>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            @*<label asp-for="NgoName" class="control-label"></label>*@
+                            <input asp-for="NgoName" placeholder="Name" class="form-control" />
+                            <span asp-validation-for="NgoName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @*<label asp-for="NgoPhoneNumber" class="control-label"></label>*@
+                            <input asp-for="NgoPhoneNumber" placeholder="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="NgoPhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @*<label asp-for="NgoMailId" class="control-label"></label>*@
+                            <input asp-for="NgoMailId" placeholder="MailId" class="form-control" />
+                            <span asp-validation-for="NgoMailId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @*<label asp-for="NgoAddress" class="control-label"></label>*@
+                            <input asp-for="NgoAddress" placeholder="Address" class="form-control" />
+                            <span asp-validation-for="NgoAddress" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @*<label asp-for="NgoUserName" class="control-label"></label>*@
+                            <input asp-for="NgoUserName" placeholder="UserName" class="form-control" />
+                            <span asp-validation-for="NgoUserName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @*<label asp-for="NgoPassword" class="control-label"></label>*@
+                            <input asp-for="NgoPassword" placeholder="Password" class="form-control" />
+                            <span asp-validation-for="NgoPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @*<label asp-for="NgoConfirmPassword" class="control-label"></label>*@
+                            <input asp-for="NgoConfirmPassword" placeholder="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="NgoConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+
+                        @Html.ActionLink("Login Here!!!", "Login", "Login")
+                    </form>
+                    @ViewBag.Result
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+
+
+    @*@Html.ActionLink("Login Here!!!", "Login", "Login")
+    <div>
+            <a asp-action="Login">Login Here!!!!</a>
+        </div>*@
+
